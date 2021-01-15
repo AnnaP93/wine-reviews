@@ -69,4 +69,9 @@ def find_common_wine_producers_and_countries():
 # find_common_wine_producers_and_countries()
 
 
+def get_max_point_per_province():
+    max_points = reviews().groupby(['country', 'province']).apply(lambda df: df.points.loc[df.points.idxmax()])
+    return max_points.sort_values(ascending=False)
+
+# print(get_max_point_per_province())
 
