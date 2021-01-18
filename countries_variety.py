@@ -32,7 +32,8 @@ def get_avg_price_per_type():
 
 
 def get_wineries_by_country():
-    winery_volume_by_country = reviews()[["country", "winery"]].groupby(by="country").count().sort_values(by="winery", ascending=False)
+    winery_volume_by_country = reviews()[["country", "winery"]].groupby(by="country").count().\
+        sort_values(by="winery", ascending=False)
     return winery_volume_by_country
 
 # get_wineries_by_country()
